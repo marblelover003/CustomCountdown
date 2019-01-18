@@ -164,7 +164,7 @@ setInterval(function() {
   if (rem > 0) {
     document.getElementById("time").style.fontSize = sizes[sizeToUse] + "px";
   }
-  document.title = document.getElementById("mode").value + ": " + f1;
+  document.title = document.getElementById("mode").value + ": " + ((w * 7) + d) + "d " + h + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2);
 }, 0);
 function switchMode() {
   document.getElementById("mode").value = localStorage.getItem("mode");
