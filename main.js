@@ -214,7 +214,7 @@ function changeMode() {
 }
 function saveDate(file) {
   localStorage.setItem("file" + file, document.getElementById("date").innerHTML);
-  document.getElementById("file" + file).innerHTML = document.getElementById("date").innerHTML;
+  document.getElementById("file" + file).innerHTML = localStorage.getItem("file" + file);
 }
 function loadDate(file) {
   document.getElementById("date").innerHTML = localStorage.getItem("file" + file);
