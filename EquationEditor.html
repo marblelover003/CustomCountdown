@@ -22,24 +22,14 @@
     <a href="index.html">Return to countdown page</a><br>
     <a href="javascript:changeTheme(0)">Light theme</a><br>
     <a href="javascript:changeTheme(1)">Dark theme</a><br>
-    <script>
-      (function () {
-        var QUEUE = MathJax.Hub.queue;
-        var math = null;
-        QUEUE.Push(function () {
-          math = MathJax.Hub.getAllJax("MathOutput")[0];
-        });
-        window.UpdateMath = function (TeX) {
-          QUEUE.Push(["Text",math,"\\displaystyle{"+TeX+"}"]);
-        }
-      })();
-    </script>
-    Type some TeX code:
-    <input id="MathInput" size="50" oninput="UpdateMath(this.value)" />
-    <p>
-      <div id="MathOutput">
-        You typed: \(0\)
-      </div>
-    </p>
+    <input style="font-size: 30px;" id="MathInput" size="50" oninput="update()" />
+    Output: <p id="MathOutput">\(\)</p>
   </body>
+  <script>
+    function update() {
+      input = document.getElementById("MathInput").value;
+      document.getElementById("MathOutput").innerHTML = "\(" + input + "\)";
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+    }
+  </script>
 </html>
