@@ -12,11 +12,12 @@
     <div style="width: 408px; word-wrap: break-word; position: absolute; left: 100px; top: 480px;">
       <div id="timer" style="font: 24px Roboto Mono; font-weight: 600; position: absolute; left: 130px; top: 0;"><input type="number" id="h" min=0 max=23 value=0 style="font: 24px Roboto Mono; font-weight: 600;" />:<input type="number" id="m" min=0 max=59 value=5 style="font: 24px Roboto Mono; font-weight: 600;" />:<input type="number" id="s" min=0 max=59 value=0 style="font: 24px Roboto Mono; font-weight: 600;" /><button style="font: 24px Roboto Mono; font-weight: 600;" onclick="changeMode()">Start</button></div>
       <div style="font-size: 18px; position: absolute; width: 325px; left: 15px; top: -445px;">
-        <div style="font: 25.7px Roboto Mono;" id="currentTime">Jan 01, 1970 12:00 AM</div>
       </div>
-      <div id="time" style="font-size: 0px; position: relative; left: -30px; top: -420px;">0.0</div>
     </div>
-    <div style="color: #0006; z-index: -99; font-size: 20px; width: 408px; position: absolute; top: 15px; left: 70px;">DATE:
+    Current time: <div style="font: 25.7px Roboto Mono;" id="currentTime">Jan 01, 1970 12:00 AM</div><br>
+    <div id="time" style="font-size: 0px;">0.0</div>
+    <div style="color: #0006; z-index: -99; font-size: 20px; width: 408px;">
+      DATE:<br>
       <span id="date" style="font-weight: 600; word-wrap: break-word;" contenteditable="true">Jan 23, 2019 04:39:00</span>
     </div>
   </body>
