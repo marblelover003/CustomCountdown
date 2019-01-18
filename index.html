@@ -23,6 +23,12 @@
       <span id="date" style="font-weight: 600; word-wrap: break-word;" contenteditable="true">Jan 01, 1970 12:00 AM</span>
     </div>
     <div id="time" style="font-size: 53px;">0.0</div>
+    <div style="position: absolute; bottom: 0; right: 0;">
+      Save / Load Dates
+      <button onclick="saveDate(1)" style="font: 20px Roboto Mono;">Save to File 1</button><span id="file1" style="font: 20px Roboto Mono;">Jan 01, 1970 12:00:00 AM</span><button onclick="loadDate(1)" style="font: 20px Roboto Mono;">Load File 1</button><br>
+      <button onclick="saveDate(2)" style="font: 20px Roboto Mono;">Save to File 2</button><span id="file2" style="font: 20px Roboto Mono;">Jan 01, 1970 12:00:00 AM</span><button onclick="loadDate(2)" style="font: 20px Roboto Mono;">Load File 2</button><br>
+      <button onclick="saveDate(3)" style="font: 20px Roboto Mono;">Save to File 3</button><span id="file3" style="font: 20px Roboto Mono;">Jan 01, 1970 12:00:00 AM</span><button onclick="loadDate(3)" style="font: 20px Roboto Mono;">Load File 3</button><br>
+    </div>
   </body>
   <script src="main.js"></script>
 </html>
