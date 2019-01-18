@@ -23,7 +23,19 @@
       input = document.getElementById("MathInput").value;
       document.getElementById("MathOutput").innerHTML = input;
       var math = MathJax.Hub.getAllJax("MathOutput")[0];
-      MathJax.Hub.Queue(["Text",math,input]);
+      math.Rerender();
+    }
+    function changeTheme(id) {
+      switch (id) {
+        case 0:
+          document.body.background = "white";
+          document.body.color = "black";
+          break;
+        case 1:
+          document.body.background = "black";
+          document.body.color = "white";
+          break;
+      }
     }
   </script>
 </html>
