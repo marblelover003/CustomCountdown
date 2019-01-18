@@ -1,4 +1,30 @@
-var date = document.getElementById("date").innerHTML, end = new Date(date).getTime(), now, rem = 0, w, d, h, m, s, ms, f1, formats, sizes, sizeToUse, formatToUse, mode, time, months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], hr = ["12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"], ampm = ["AM", "PM"], currentTime = {month:0, date:1, year:1970, hour:0, minute:0};
+var date = document.getElementById("date").innerHTML,
+    end = new Date(date).getTime(),
+    now,
+    rem = 0,
+    w,
+    d,
+    h,
+    m,
+    s,
+    ms,
+    f1,
+    formats,
+    sizes,
+    sizeToUse,
+    formatToUse,
+    mode,
+    time,
+    months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    hr = ["12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"],
+    ampm = ["AM", "PM"],
+    currentTime = {
+      month: 0,
+      date: 1,
+      year: 1970,
+      hour: 0,
+      minute: 0
+    };
 switchMode();
 setInterval(function() {
   currentTime = {month: new Date().getMonth(), date: ("0" + new Date().getDate()).slice(-2), year: new Date().getFullYear(), hour: new Date().getHours(), minute: ("0" + new Date().getMinutes()).slice(-2)};
@@ -167,16 +193,8 @@ setInterval(function() {
   document.title = document.getElementById("mode").value + ": " + ((w * 7) + d) + "d " + h + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2);
 }, 0);
 function switchMode() {
-  document.getElementById("mode").value = localStorage.getItem("mode");
-  switch (localStorage.getItem("mode")) {
-    case "Date":
-      mode = 1;
-      break;
-    case "Timer":
-      var timer = {hr:document.getElementById("h").value, min:document.getElementById("m").value, sec:document.getElementById("s").value};
-      time = eval((timer.hr * 3600000) + (timer.min * 60000) + (timer.sec * 1000));
-      end = new Date().getTime() + time;
-  }
+  document.getElementById("mode").value = "Date";
+  mode = 1;
 }
 function changeMode() {
   mode = document.getElementById("mode").value;
@@ -186,7 +204,7 @@ function changeMode() {
       mode = 1;
       break;
     case "Timer":
-      var timer = {hr:document.getElementById("h").value, min:document.getElementById("m").value, sec:document.getElementById("s").value};
+      var timer = {hr: document.getElementById("h").value, min: document.getElementById("m").value, sec: document.getElementById("s").value};
       time = eval((timer.hr * 3600000) + (timer.min * 60000) + (timer.sec * 1000));
       end = new Date().getTime() + time;
   }
