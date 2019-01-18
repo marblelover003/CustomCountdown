@@ -22,7 +22,8 @@
     function update() {
       input = document.getElementById("MathInput").value;
       document.getElementById("MathOutput").innerHTML = input;
-      MathJax.Hub.Queue(["Typeset",MathJax.Hub,"MathInput"]);
+      var math = MathJax.Hub.getAllJax("MathOutput")[0];
+      MathJax.Hub.Queue(["Text",math,"MathInput"]);
     }
   </script>
 </html>
