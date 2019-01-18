@@ -26,6 +26,9 @@ var date = document.getElementById("date").innerHTML,
       minute: 0
     };
 switchMode();
+document.getElementById("file1").innerHTML = localStorage.getItem("file1");
+document.getElementById("file2").innerHTML = localStorage.getItem("file2");
+document.getElementById("file3").innerHTML = localStorage.getItem("file3");
 setInterval(function() {
   currentTime = {month: new Date().getMonth(), date: ("0" + new Date().getDate()).slice(-2), year: new Date().getFullYear(), hour: new Date().getHours(), minute: ("0" + new Date().getMinutes()).slice(-2)};
   currentTimeFormat = {month: months[currentTime.month], date: currentTime.date, year: currentTime.year, hour: hr[currentTime.hour], minute: currentTime.minute, ampm:ampm[Math.floor(currentTime.hour / 12)]};
