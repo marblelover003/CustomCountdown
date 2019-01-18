@@ -209,3 +209,10 @@ function changeMode() {
       end = new Date().getTime() + time;
   }
 }
+function saveDate(file) {
+  localStorage.setItem("file" + file, document.getElementById("date").innerHTML);
+  document.getElementById("file" + file).innerHTML = document.getElementById("date").innerHTML;
+}
+function loadDate(file) {
+  document.getElementById("date").innerHTML = localStorage.getItem("file" + file);
+}
