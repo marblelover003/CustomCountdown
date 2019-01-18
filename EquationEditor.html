@@ -23,7 +23,7 @@
       input = document.getElementById("MathInput").value;
       document.getElementById("MathOutput").innerHTML = input;
       var math = MathJax.Hub.getAllJax("MathOutput")[0];
-      MathJax.Hub.Queue(["Text",math,"MathInput"]);
+      MathJax.Hub.Queue(["Text",math,input]);
     }
   </script>
 </html>
