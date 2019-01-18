@@ -169,10 +169,10 @@ setInterval(function() {
 function switchMode() {
   document.getElementById("mode").value = localStorage.getItem("mode");
   switch (localStorage.getItem("mode")) {
-    case "date":
+    case "Date":
       mode = 1;
       break;
-    case "timer":
+    case "Timer":
       var timer = {hr:document.getElementById("h").value, min:document.getElementById("m").value, sec:document.getElementById("s").value};
       time = eval((timer.hr * 3600000) + (timer.min * 60000) + (timer.sec * 1000));
       end = new Date().getTime() + time;
@@ -182,10 +182,10 @@ function changeMode() {
   mode = document.getElementById("mode").value;
   localStorage.setItem("mode", mode);
   switch (localStorage.getItem("mode")) {
-    case "date":
+    case "Date":
       mode = 1;
       break;
-    case "timer":
+    case "Timer":
       var timer = {hr:document.getElementById("h").value, min:document.getElementById("m").value, sec:document.getElementById("s").value};
       time = eval((timer.hr * 3600000) + (timer.min * 60000) + (timer.sec * 1000));
       end = new Date().getTime() + time;
