@@ -1,0 +1,17 @@
+body {
+  background: white;
+  margin: 0;
+  font: 279px Roboto;
+  text-align: center;
+  font-weight: 900;
+  overflow: hidden;
+}
+p {
+  color: black;
+}
+h1 {
+  font-weight: bold;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+  display: none;
+}
