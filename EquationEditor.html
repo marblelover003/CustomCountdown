@@ -7,13 +7,6 @@
         transition-duration: 1s;
       }
     </style>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [["$","$"],["\\(","\\)"]]
-        }
-      });
-    </script>
     <script type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML-full">
     </script>
@@ -28,8 +21,8 @@
   <script>
     function update() {
       input = document.getElementById("MathInput").value;
-      document.getElementById("MathOutput").innerHTML = "\(" + input + "\)";
-      MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+      document.getElementById("MathOutput").innerHTML = input;
+      MathJax.Hub.Queue(["Typeset",MathJax.Hub,"MathInput"]);
     }
   </script>
 </html>
