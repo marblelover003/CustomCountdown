@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      body {
+        background: white;
+        transition-duration: 1s;
+      }
+    </style>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [["$","$"],["\\(","\\)"]]
+        }
+      });
+    </script>
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_CHTML-full">
+    </script>
+  </head>
+  <body>
+    <a href="index.html">Return to countdown page</a><br>
+    <a href="javascript:changeTheme(0)">Light theme</a><br>
+    <a href="javascript:changeTheme(1)">Dark theme</a><br>
+    <script>
+      (function () {
+        var QUEUE = MathJax.Hub.queue;
+        var math = null;
+        QUEUE.Push(function () {
+          math = MathJax.Hub.getAllJax("MathOutput")[0];
+        });
+        window.UpdateMath = function (TeX) {
+          QUEUE.Push(["Text",math,"\\displaystyle{"+TeX+"}"]);
+        }
+      })();
+    </script>
+    Type some TeX code:
+    <input id="MathInput" size="50" onchange="UpdateMath(this.value)" />
+    <p>
+      <div id="MathOutput">
+        You typed: ${}$
+      </div>
+    </p>
+</html>
