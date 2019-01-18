@@ -35,10 +35,11 @@
       })();
     </script>
     Type some TeX code:
-    <input id="MathInput" size="50" onchange="UpdateMath(this.value)" />
+    <input id="MathInput" size="50" oninput="UpdateMath(this.value)" />
     <p>
       <div id="MathOutput">
-        You typed: ${}$
+        You typed: \(0\)
       </div>
     </p>
+  </body>
 </html>
