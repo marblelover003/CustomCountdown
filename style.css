@@ -1,16 +1,10 @@
 body {
-  background: white;
+  background: antiquewhite;
   margin: 0;
   font: 50px Roboto;
   text-align: center;
   font-weight: 900;
   overflow: hidden;
-}
-p {
-  color: black;
-}
-h1 {
-  font-weight: bold;
 }
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
   display: none;
