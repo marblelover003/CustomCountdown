@@ -1,16 +1,8 @@
-var timeToUse = 0, start, now, elapsed, h, m, s, ms, format, isPaused, isStarted, delay, nowT, times, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], hours = ["12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"], ampm = ["AM", "PM"], currentTime, goal1 = localStorage.getItem("goal1"), goal2 = localStorage.getItem("goal2"), goal3 = localStorage.getItem("goal3");
+var timeToUse = 0, start, now, elapsed, h, m, s, ms, format, isPaused, isStarted, delay, nowT, times, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"], months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], hours = ["12", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11"], ampm = ["AM", "PM"], currentTime, time;
 isStarted = false;
 isPaused = true;
 elapsed = 0;
-times = [
-  (99 * 3600000) + (59 * 60000) + (59 * 1000) + 999,
-  goal1,
-  goal2,
-  goal3
-];
-function changeTimeInUse(id) {
-  timeToUse = id;
-}
+time = 359999999;
 setInterval(timerRunning, 0);
 function delay_3s() {
   document.getElementById("delay3").style.visibility = "hidden";
@@ -345,20 +337,20 @@ function timerRunning() {
   ms= Math.floor(elapsed % 1000);
   format = ("0" + h).slice(-2) + "." + ("0" + m).slice(-2) + "." + ("0" + s).slice(-2) + "." + ("00" + ms).slice(-3);
   document.getElementById("time").innerHTML = format;
-  if (times[timeToUse] - elapsed >= 0) {
+  if (time - elapsed >= 0) {
     document.getElementById("timeSign").innerHTML = "-";
-    document.getElementById("time_ms").innerHTML = ("0" + (Math.floor((times[timeToUse] - elapsed) / 3600000))).slice(-2) + "." + ("0" + (Math.floor(((times[timeToUse] - elapsed) % 3600000) / 60000))).slice(-2) + "." + ("0" + (Math.floor(((times[timeToUse] - elapsed) % 60000) / 1000))).slice(-2) + "." + ("00" + ((times[timeToUse] - elapsed) % 1000)).slice(-3);
+    document.getElementById("time_ms").innerHTML = ("0" + (Math.floor((time - elapsed) / 3600000))).slice(-2) + "." + ("0" + (Math.floor(((time - elapsed) % 3600000) / 60000))).slice(-2) + "." + ("0" + (Math.floor(((time - elapsed) % 60000) / 1000))).slice(-2) + "." + ("00" + ((time - elapsed) % 1000)).slice(-3);
     document.getElementById("time_ms").style.color = "#00bf00";
     document.getElementById("timeSign").style.color = "#00bf00";
-  } else if (times[timeToUse] - elapsed < 0) {
+  } else if (time - elapsed < 0) {
     document.getElementById("timeSign").innerHTML = "+";
-    document.getElementById("time_ms").innerHTML = ("0" + (Math.floor((elapsed - times[timeToUse]) / 3600000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - times[timeToUse]) % 3600000) / 60000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - times[timeToUse]) % 60000) / 1000))).slice(-2) + "." + ("00" + ((elapsed - times[timeToUse]) % 1000)).slice(-3);
+    document.getElementById("time_ms").innerHTML = ("0" + (Math.floor((elapsed - time) / 3600000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - time) % 3600000) / 60000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - time) % 60000) / 1000))).slice(-2) + "." + ("00" + ((elapsed - time) % 1000)).slice(-3);
     document.getElementById("time_ms").style.color = "#ff0000";
     document.getElementById("timeSign").style.color = "#ff0000";
   }
 }
-function saveTime(id) {
-  var hs, ms, ss, mss, timeSave, confirmation;
+function setTime() {
+  var hs, ms, ss, mss, confirmation;
   hs = ms = ss = mss = -1;
   while (hs > 99 || hs < 0) {
     var hs = prompt("Save how many hours to file " + id + "?");
@@ -386,8 +378,7 @@ function saveTime(id) {
   }
   confirmation = confirm("You are setting Goal " + id + " to " + hs + ":" + ("0" + ms).slice(-2) + ":" + ("0" + ss).slice(-2) + "." + ("00" + mss).slice(-3) + ". Do you want to continue?");
   if (confirmation == true) {
-    timeSave = (hs * 3600000) + (ms * 60000) + (ss * 1000) + mss;
-    localStorage.setItem("goal" + id, time);
+    time = (hs * 3600000) + (ms * 60000) + (ss * 1000) + mss;
   } else {
     alert("Goal has not been set.");
   }
