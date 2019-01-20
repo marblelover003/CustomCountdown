@@ -358,7 +358,7 @@ function timerRunning() {
   }
 }
 function saveTime(id) {
-  var hs, ms, ss, mss, time, confirmation;
+  var hs, ms, ss, mss, timeSave, confirmation;
   hs = ms = ss = mss = -1;
   while (hs > 99 || hs < 0) {
     var hs = prompt("Save how many hours to file " + id + "?");
@@ -384,11 +384,10 @@ function saveTime(id) {
       alert("Invalid milliseconds value. Milliseconds must be between 0 and 999, inclusive.");
     }
   }
-  time = (hs * 3600000) + (ms * 60000) + (ss * 1000) + mss;
   confirmation = confirm("You are setting Goal " + id + " to " + hs + ":" + ("0" + ms).slice(-2) + ":" + ("0" + ss).slice(-2) + "." + ("00" + mss).slice(-3) + ". Do you want to continue?");
   if (confirmation == true) {
+    timeSave = (hs * 3600000) + (ms * 60000) + (ss * 1000) + mss;
     localStorage.setItem("goal" + id, time);
-    alert("Goal set!");
   } else {
     alert("Goal has not been set.");
   }
