@@ -4,9 +4,9 @@ isPaused = true;
 elapsed = 0;
 times = [
   (99 * 3600000) + (59 * 60000) + (59 * 1000) + 999,
-  (4 * 60000) + (49 * 1000) + 655, // Goal 1
-  (7 * 60000) + (51 * 1000) + 855, // Goal 2
-  (49 * 1000) + 402                // Goal 3
+  localStorage.getItem("goal1"),
+  localStorage.getItem("goal2"),
+  localStorage.getItem("goal3")
 ];
 function changeTimeInUse(id) {
   timeToUse = id;
@@ -328,5 +328,40 @@ function timerRunning() {
     document.getElementById("time_ms").innerHTML = ("0" + (Math.floor((elapsed - times[timeToUse]) / 3600000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - times[timeToUse]) % 3600000) / 60000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - times[timeToUse]) % 60000) / 1000))).slice(-2) + "." + ("00" + ((elapsed - times[timeToUse]) % 1000)).slice(-3);
     document.getElementById("time_ms").style.color = "#ff0000";
     document.getElementById("timeSign").style.color = "#ff0000";
+  }
+}
+function saveTime(id) {
+  var hs, ms, ss, mss, time, confirmation;
+  while (hs > 99 || hs < 0) {
+    var hs = prompt("Save how many hours to file " + id + "?");
+    if (hs > 99 || hs < 0) {
+      alert("Invalid hours value. Hours must be between 0 and 99, inclusive.");
+    }
+  }
+  while (ms > 59 || ms < 0) {
+    var ms = prompt("Save how many minutes to file " + id + "?");
+    if (ms > 59 || ms < 0) {
+      alert("Invalid minutes value. Minutes must be between 0 and 59, inclusive.");
+    }
+  }
+  while (ss > 59 || ss < 0) {
+    var ss = prompt("Save how many seconds to file " + id + "?");
+    if (ss > 59 || ss < 0) {
+      alert("Invalid seconds value. Seconds must be between 0 and 59, inclusive.");
+    }
+  }
+  while (mss > 999 || mss < 0) {
+    var mss = prompt("Save how many milliseconds to file " + id + "?");
+    if (mss > 999 || mss < 0) {
+      alert("Invalid milliseconds value. Milliseconds must be between 0 and 999, inclusive.");
+    }
+  }
+  time = (hs * 3600000) + (ms * 60000) + (ss * 1000) + mss;
+  confirmation = confirm("You are setting Goal " + id + " to " + hs + ":" + ("0" + ms).slice(-2) + ":" + ("0" + ss).slice(-2) + "." + ("00" + mss).slice(-3) + ". Do you want to continue?");
+  if (confirmation == true) {
+    localStorage.setItem("goal" + id, time);
+    alert("Goal set!");
+  } else {
+    alert("Goal has not been set.");
   }
 }
