@@ -359,6 +359,7 @@ function timerRunning() {
 }
 function saveTime(id) {
   var hs, ms, ss, mss, time, confirmation;
+  hs = ms = ss = mss = -1;
   while (hs > 99 || hs < 0) {
     var hs = prompt("Save how many hours to file " + id + "?");
     if (hs > 99 || hs < 0) {
