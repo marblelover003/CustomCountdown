@@ -1,0 +1,75 @@
+body {
+  background: white;
+  font-family: "Segment7Standard";
+  font-weight: normal;
+  font-style: italic;
+  margin: 0;
+  width: 557px;
+  user-select: none;
+}
+p {
+  color: black;
+}
+h1 {
+  font-weight: bold;
+}
+.button {
+  font-family: "Ubuntu Mono";
+  transition: 100ms linear;
+  background: #ccc;
+  font-size: 30px;
+  width: 108px;
+  height: 75px;
+  border: 5px solid black;
+  border-radius: 5px;
+  margin: 2px;
+}
+.delay_container {
+  width: 180px;
+  height: 150px;
+  font-family: "Segment7Standard";
+  font-size: 125px;
+  text-align: center;
+  line-height: 150px;
+  border-radius: 45px;
+}
+.start_pause_button:hover, .reset_button:hover, .delay_button:hover {
+  border-radius: 25px;
+  cursor: pointer;
+}
+.start_pause_button {
+  background: #00df00;
+  width: 236px;
+  color: black;
+}
+.reset_button {
+  background: red;
+  width: 236px;
+  color: white;
+}
+.delay_button {
+  background: dodgerblue;
+  font-size: 30px;
+  width: 68px;
+  height: 50px;
+  color: white;
+}
+.time_ms {
+  font-size: 50px;
+  font-style: normal;
+  display: inline-block;
+}
+:focus {
+  outline: none;
+}
+#dateAndTime {
+  font: 38px Inconsolata;
+  text-align: center;
+}
+a, a:visited {
+  color: #0000ff;
+  text-decoration: none;
+}
+a:hover {
+  border-bottom: 5px solid black;
+}
