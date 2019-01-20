@@ -23,6 +23,9 @@ function delay_3s() {
   document.getElementById("mm3Btn").style.visibility = "hidden";
   document.getElementById("pc5Btn").style.visibility = "hidden";
   document.getElementById("rc3Btn").style.visibility = "hidden";
+  document.getElementById("mm3SBtn").style.visibility = "hidden";
+  document.getElementById("pc5SBtn").style.visibility = "hidden";
+  document.getElementById("rc3SBtn").style.visibility = "hidden";
   document.getElementById("resBtn").style.visibility = "hidden";
   delay = 3;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
@@ -44,6 +47,9 @@ function delay_5s() {
   document.getElementById("mm3Btn").style.visibility = "hidden";
   document.getElementById("pc5Btn").style.visibility = "hidden";
   document.getElementById("rc3Btn").style.visibility = "hidden";
+  document.getElementById("mm3SBtn").style.visibility = "hidden";
+  document.getElementById("pc5SBtn").style.visibility = "hidden";
+  document.getElementById("rc3SBtn").style.visibility = "hidden";
   document.getElementById("resBtn").style.visibility = "hidden";
   delay = 5;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
@@ -61,6 +67,9 @@ function delay_10s() {
   document.getElementById("mm3Btn").style.visibility = "hidden";
   document.getElementById("pc5Btn").style.visibility = "hidden";
   document.getElementById("rc3Btn").style.visibility = "hidden";
+  document.getElementById("mm3SBtn").style.visibility = "hidden";
+  document.getElementById("pc5SBtn").style.visibility = "hidden";
+  document.getElementById("rc3SBtn").style.visibility = "hidden";
   document.getElementById("resBtn").style.visibility = "hidden";
   delay = 10;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
@@ -81,6 +90,9 @@ function delay_15s() {
   document.getElementById("mm3Btn").style.visibility = "hidden";
   document.getElementById("pc5Btn").style.visibility = "hidden";
   document.getElementById("rc3Btn").style.visibility = "hidden";
+  document.getElementById("mm3SBtn").style.visibility = "hidden";
+  document.getElementById("pc5SBtn").style.visibility = "hidden";
+  document.getElementById("rc3SBtn").style.visibility = "hidden";
   document.getElementById("resBtn").style.visibility = "hidden";
   delay = 15;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
@@ -98,6 +110,9 @@ function delay_30s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
+  document.getElementById("mm3SBtn").style.visibility = "hidden";
+  document.getElementById("pc5SBtn").style.visibility = "hidden";
+  document.getElementById("rc3SBtn").style.visibility = "hidden";
   delay = 30;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -124,6 +139,9 @@ function delay_60s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
+  document.getElementById("mm3SBtn").style.visibility = "hidden";
+  document.getElementById("pc5SBtn").style.visibility = "hidden";
+  document.getElementById("rc3SBtn").style.visibility = "hidden";
   delay = 60;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -165,6 +183,9 @@ function delay_90s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
+  document.getElementById("mm3SBtn").style.visibility = "hidden";
+  document.getElementById("pc5SBtn").style.visibility = "hidden";
+  document.getElementById("rc3SBtn").style.visibility = "hidden";
   delay = 90;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -214,6 +235,9 @@ function toggle_start_pause() {
   document.getElementById("mm3Btn").style.visibility = "hidden";
   document.getElementById("pc5Btn").style.visibility = "hidden";
   document.getElementById("rc3Btn").style.visibility = "hidden";
+  document.getElementById("mm3SBtn").style.visibility = "hidden";
+  document.getElementById("pc5SBtn").style.visibility = "hidden";
+  document.getElementById("rc3SBtn").style.visibility = "hidden";
   document.getElementById("resBtn").style.visibility = "hidden";
   if (isStarted == false) {
     isStarted = true;
@@ -247,6 +271,9 @@ function resetTimer() {
   document.getElementById("mm3Btn").style.visibility = "visible";
   document.getElementById("pc5Btn").style.visibility = "visible";
   document.getElementById("rc3Btn").style.visibility = "visible";
+  document.getElementById("mm3SBtn").style.visibility = "visible";
+  document.getElementById("pc5SBtn").style.visibility = "visible";
+  document.getElementById("rc3SBtn").style.visibility = "visible";
   document.getElementById("resBtn").style.visibility = "visible";
   currentTime = new Date("Jan 1, 1970");
   nowT = {
