@@ -12,7 +12,6 @@ function delay_3s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
-  document.getElementById("setTime").style.visibility = "hidden";
   delay = 3;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -30,7 +29,6 @@ function delay_5s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
-  document.getElementById("setTime").style.visibility = "hidden";
   delay = 5;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -44,7 +42,6 @@ function delay_10s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
-  document.getElementById("setTime").style.visibility = "hidden";
   delay = 10;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -61,7 +58,6 @@ function delay_15s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
-  document.getElementById("setTime").style.visibility = "hidden";
   delay = 15;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -78,7 +74,6 @@ function delay_30s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
-  document.getElementById("setTime").style.visibility = "hidden";
   delay = 30;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -105,7 +100,6 @@ function delay_60s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
-  document.getElementById("setTime").style.visibility = "hidden";
   delay = 60;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -147,7 +141,6 @@ function delay_90s() {
   document.getElementById("delay30").style.visibility = "hidden";
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
-  document.getElementById("setTime").style.visibility = "hidden";
   delay = 90;
   document.getElementById("delay").innerHTML = ("0" + delay).slice(-2);
   d1 = setTimeout(decreaseDelay,1000);
@@ -194,7 +187,6 @@ function toggle_start_pause() {
   document.getElementById("delay60").style.visibility = "hidden";
   document.getElementById("delay90").style.visibility = "hidden";
   document.getElementById("delay").style.visibility = "hidden";
-  document.getElementById("setTime").style.visibility = "hidden";
   if (isStarted == false) {
     isStarted = true;
     start = new Date().getTime();
@@ -224,7 +216,6 @@ function resetTimer() {
   document.getElementById("delay60").style.visibility = "visible";
   document.getElementById("delay90").style.visibility = "visible";
   document.getElementById("delay").style.visibility = "visible";
-  document.getElementById("setTime").style.visibility = "visible";
   currentTime = new Date("Jan 1, 1970");
   nowT = {
     day:currentTime.getDay(),
@@ -295,49 +286,4 @@ function timerRunning() {
   ms= Math.floor(elapsed % 1000);
   format = ("0" + h).slice(-2) + "." + ("0" + m).slice(-2) + "." + ("0" + s).slice(-2) + "." + ("00" + ms).slice(-3);
   document.getElementById("time").innerHTML = format;
-  if (time - elapsed >= 0) {
-    document.getElementById("timeSign").innerHTML = "-";
-    document.getElementById("time_ms").innerHTML = ("0" + (Math.floor((time - elapsed) / 3600000))).slice(-2) + "." + ("0" + (Math.floor(((time - elapsed) % 3600000) / 60000))).slice(-2) + "." + ("0" + (Math.floor(((time - elapsed) % 60000) / 1000))).slice(-2) + "." + ("00" + ((time - elapsed) % 1000)).slice(-3);
-    document.getElementById("time_ms").style.color = "#00bf00";
-    document.getElementById("timeSign").style.color = "#00bf00";
-  } else if (time - elapsed < 0) {
-    document.getElementById("timeSign").innerHTML = "+";
-    document.getElementById("time_ms").innerHTML = ("0" + (Math.floor((elapsed - time) / 3600000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - time) % 3600000) / 60000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - time) % 60000) / 1000))).slice(-2) + "." + ("00" + ((elapsed - time) % 1000)).slice(-3);
-    document.getElementById("time_ms").style.color = "#ff0000";
-    document.getElementById("timeSign").style.color = "#ff0000";
-  }
-}
-function setTime() {
-  var hs, ms, ss, mss, confirmation;
-  hs = ms = ss = mss = -1;
-  while (hs > 99 || hs < 0) {
-    var hs = prompt("Save how many hours to file " + id + "?");
-    if (hs > 99 || hs < 0) {
-      alert("Invalid hours value. Hours must be between 0 and 99, inclusive.");
-    }
-  }
-  while (ms > 59 || ms < 0) {
-    var ms = prompt("Save how many minutes to file " + id + "?");
-    if (ms > 59 || ms < 0) {
-      alert("Invalid minutes value. Minutes must be between 0 and 59, inclusive.");
-    }
-  }
-  while (ss > 59 || ss < 0) {
-    var ss = prompt("Save how many seconds to file " + id + "?");
-    if (ss > 59 || ss < 0) {
-      alert("Invalid seconds value. Seconds must be between 0 and 59, inclusive.");
-    }
-  }
-  while (mss > 999 || mss < 0) {
-    var mss = prompt("Save how many milliseconds to file " + id + "?");
-    if (mss > 999 || mss < 0) {
-      alert("Invalid milliseconds value. Milliseconds must be between 0 and 999, inclusive.");
-    }
-  }
-  confirmation = confirm("You are setting Goal " + id + " to " + hs + ":" + ("0" + ms).slice(-2) + ":" + ("0" + ss).slice(-2) + "." + ("00" + mss).slice(-3) + ". Do you want to continue?");
-  if (confirmation == true) {
-    time = (hs * 3600000) + (ms * 60000) + (ss * 1000) + mss;
-  } else {
-    alert("Goal has not been set.");
-  }
 }
