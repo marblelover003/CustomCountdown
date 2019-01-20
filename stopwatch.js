@@ -4,9 +4,9 @@ isPaused = true;
 elapsed = 0;
 times = [
   (99 * 3600000) + (59 * 60000) + (59 * 1000) + 999,
-  (4 * 60000) + (49 * 1000) + 655, // Megaminx
-  (7 * 60000) + (51 * 1000) + 855, // Professor's Cube
-  (49 * 1000) + 402                // Rubik's Cube
+  (4 * 60000) + (49 * 1000) + 655, // Goal 1
+  (7 * 60000) + (51 * 1000) + 855, // Goal 2
+  (49 * 1000) + 402                // Goal 3
 ];
 function changeTimeInUse(id) {
   timeToUse = id;
