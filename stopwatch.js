@@ -321,12 +321,12 @@ function timerRunning() {
   if (times[timeToUse] - elapsed >= 0) {
     document.getElementById("timeSign").innerHTML = "-";
     document.getElementById("time_ms").innerHTML = ("0" + (Math.floor((times[timeToUse] - elapsed) / 3600000))).slice(-2) + "." + ("0" + (Math.floor(((times[timeToUse] - elapsed) % 3600000) / 60000))).slice(-2) + "." + ("0" + (Math.floor(((times[timeToUse] - elapsed) % 60000) / 1000))).slice(-2) + "." + ("00" + ((times[timeToUse] - elapsed) % 1000)).slice(-3);
-                                                    document.getElementById("time_ms").style.color = "#00bf00";
+    document.getElementById("time_ms").style.color = "#00bf00";
     document.getElementById("timeSign").style.color = "#00bf00";
   } else if (times[timeToUse] - elapsed < 0) {
     document.getElementById("timeSign").innerHTML = "+";
     document.getElementById("time_ms").innerHTML = ("0" + (Math.floor((elapsed - times[timeToUse]) / 3600000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - times[timeToUse]) % 3600000) / 60000))).slice(-2) + "." + ("0" + (Math.floor(((elapsed - times[timeToUse]) % 60000) / 1000))).slice(-2) + "." + ("00" + ((elapsed - times[timeToUse]) % 1000)).slice(-3);
-                                                    document.getElementById("time_ms").style.color = "#ff0000";
+    document.getElementById("time_ms").style.color = "#ff0000";
     document.getElementById("timeSign").style.color = "#ff0000";
   }
 }
