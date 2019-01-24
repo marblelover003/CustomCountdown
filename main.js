@@ -109,6 +109,7 @@ setInterval(function() {
     ("0" + ((m * 60) + s)).slice(-2) + "." + ("0" + Math.floor(ms / 10)).slice(-2), // 34
     ((m * 60) + s) + "." + ("00" + ms).slice(-3), // 35
     s+1, // 36
+    0 // 37
   ];
   sizes = [53, 58, 66, 73, 73, 81, 65, 72, 85, 97, 97, 113, 58, 63, 73, 81, 81, 92, 72, 80, 97, 113, 113, 135, 74, 83, 101, 119, 118, 143, 100, 113, 155, 200, 155, 155, 400];
   formatToUse = 0;
@@ -186,6 +187,8 @@ setInterval(function() {
     formatToUse = 35;
   } else if (w == 0 && d < 3 && (0 <= rem && rem < 5000)) {
     formatToUse = 36;
+  } else if (rem <= 0) {
+    formatToUse = 37;
   }
   sizeToUse = formatToUse;
   f1 = formats[formatToUse];
