@@ -57,6 +57,7 @@ setInterval(function() {
     document.getElementById("time").style.color = "#c0c0c0";
   } else if (rem < 5000) {
     if (rem < 0) {
+      rem = 0;
       document.getElementById("time").style.color = "#0000ff";
     } else {
       document.getElementById("time").style.color = "#ffd700";
