@@ -56,7 +56,7 @@ setInterval(function() {
   } else if (rem < 10000 && rem >= 5000) {
     document.getElementById("time").style.color = "#c0c0c0";
   } else if (rem < 5000) {
-    if (end < now) {
+    if (end - now < 0) {
       rem = now - end;
       document.getElementById("time").style.color = "#0000ff";
     } else {
