@@ -56,14 +56,8 @@ setInterval(function() {
   } else if (rem < 10000 && rem >= 5000) {
     document.getElementById("time").style.color = "#c0c0c0";
   } else if (rem < 5000) {
-    if (rem <= 0) {
-      rem = 0;
-      w = 0;
-      d = 0;
-      h = 0;
-      m = 0;
-      s = -1;
-      ms = 0;
+    if (end < now) {
+      rem = now - end;
       document.getElementById("time").style.color = "#0000ff";
     } else {
       document.getElementById("time").style.color = "#ffd700";
@@ -190,9 +184,7 @@ setInterval(function() {
   sizeToUse = formatToUse;
   f1 = formats[formatToUse];
   document.getElementById("time").innerHTML = f1;
-  if (rem > 0) {
-    document.getElementById("time").style.fontSize = sizes[sizeToUse] + "px";
-  }
+  document.getElementById("time").style.fontSize = sizes[sizeToUse] + "px";
   document.title = document.getElementById("mode").value + ": " + ((w * 7) + d) + "d " + h + ":" + ("0" + m).slice(-2) + ":" + ("0" + s).slice(-2);
 }, 0);
 function switchMode() {
